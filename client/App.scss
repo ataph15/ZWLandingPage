@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,600,800&display=swap");
+
+$peach: #f9cb9c;
+$black: #191919;
+$white: #fff;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+
+.container {
+  width: 1600px;
+  min-width: 1600px;
+  margin: 0 auto;
+  .wrapper {
+    padding: 0 48px;
+    .home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      p {
+        font-size: .75rem;
+        letter-spacing: .3rem;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      h5 {
+        margin-top: 260px;
+        font-size: 1.5rem;
+        font-weight: normal;
+        padding-right: 360px;
+      }
+    }
+  }
+}
+// Header.js
+header {
+  height: 100px;
+  // background: green;
+  .inner-header {
+    position: relative;
+    z-index: 10;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background: green;
+    .logo a {
+      font-weight: 800;
+      text-decoration: none;
+      color: $black;
+      font-size: 1.7rem;
+    }
+    .menu {
+      float: right;
+      button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: $black;
+        // background: green;
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+  // Zenwich.js
+  .zenwich-menu {
+    display: none; // Toggle onOff
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    .menu-secondary-background-color {
+      background: $black;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+    .menu-layer {
+      position: relative;
+      background-color: $peach;
+      height: 100%;
+      overflow: hidden;
+      .menu-sandwich-background {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        // opacity: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        animation-name: backgroundEffect;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        zoom: 35%;
+        padding: 50px;
+      }
+      .wrapper {
+        position: relative;
+        .menu-links {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          top: 300px;
+          // background-color: green;
+          nav {
+            display: block;
+            ul {
+              padding: 0;
+              margin: 0;
+              li {
+                list-style: none;
+                font-size: 6rem;
+                font-weight: 700;
+                cursor: pointer;
+                height: 135px;
+                overflow: hidden;
+                position: relative;
+                width: 700px;
+                a {
+                  position: absolute;
+                  color: $white;
+                  text-decoration: none;
+                  &:hover {
+                    color: $black;
+                  }
+                }
+              }
+            }
+          }
+          .info {
+            color: $white;
+            width: 300px;
+            float: right;
+            text-align: right;
+            // background: green;
+            h3 {
+              font-size: 1.3rem;
+              margin: 8px auto;
+              font-weight: 600;
+            }
+            p {
+              font-size: 0.9rem;
+              margin: 0;
+              color: $black;
+              font-weight: 400;
+            }
+          }
+        }
+        .sandwiches {
+          position: absolute;
+          bottom: -80px;
+          color: $white;
+          margin-top: 16px;
+          font-size: 1.5rem;
+          font-weight: 600;
+          white-space: nowrap;
+          color: $black;
+          span {
+            &:first-child {
+              margin-left: 64px;
+            }
+            font-weight: 600;
+            font-size: 1rem;
+            color: $white;
+            cursor: pointer;
+            margin: 0 32px;
+            transition: .1s ease-in-out;
+            &:hover {
+              background: $black;
+              padding: 6px 18px;
+              border-radius: 4px;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@keyframes backgroundEffect {
+  0% {
+    background-position: 40% 10%;
+  }
+  25% {
+    background-position: 30% 20%;
+  }
+  50% {
+    background-position: 30% 20%;
+  }
+  75% {
+    background-position: 20% 40%;
+  }
+  100% {
+    background-position: 20% 20%;
+  }
+}
